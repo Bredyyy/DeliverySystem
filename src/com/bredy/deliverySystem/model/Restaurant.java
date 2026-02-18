@@ -5,6 +5,12 @@ public class Restaurant {
     private String address;
     private String category;
 
+    public void showRestaurantInfo() {
+        System.out.println("Restaurant: " + name);
+        System.out.println("Category: " + category);
+        System.out.println("Address: " + address);
+    }
+
     public String getName() {
         return name;
     }
@@ -27,17 +33,5 @@ public class Restaurant {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    // TESTINGS AREA
-
-
-
-    //
-
-    public void showInfo() {
-        System.out.println("Restaurant: " + name);
-        System.out.println("Category: " + category);
-        System.out.println("Address: " + address);
     }
 }
