@@ -5,6 +5,15 @@ public class Restaurant {
     private String address;
     private String category;
 
+    public Restaurant(String name, String address, String category) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Restaurant name cannot be empty");
+        }
+        this.name = name;
+        this.address = address;
+        this.category = category;
+    }
+
     public void showRestaurantInfo() {
         System.out.println("Restaurant: " + name);
         System.out.println("Category: " + category);
@@ -24,6 +33,9 @@ public class Restaurant {
     }
 
     public void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Restaurant name cannot be empty");
+        }
         this.name = name;
     }
 

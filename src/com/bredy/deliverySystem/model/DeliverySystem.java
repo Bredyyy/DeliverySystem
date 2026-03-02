@@ -12,8 +12,9 @@ public class DeliverySystem {
         System.out.println("Client " + c.getName() + " | Restaurant " + r.getName() + " | Value: R$" + valor);
     }
     public void orderList() {
-        System.out.println("\n======= ORDER =======");
         for (Order o : orders) {
+            System.out.println("\n======= ORDER =======");
+            System.out.println("ID: " + o.getId());
             System.out.println("Client: " + o.getClient().getName() +
                     " | Restaurant: " + o.getRestaurant().getName() +
                     " | Value: R$" + o.getValorTotal());
