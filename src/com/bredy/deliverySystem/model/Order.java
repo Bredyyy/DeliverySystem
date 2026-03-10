@@ -1,12 +1,14 @@
 package com.bredy.deliverySystem.model;
+import com.bredy.deliverySystem.service.Deliverable;
 
-public class Order {
+public class Order implements Deliverable {
     private static long counter = 0;
     private final long id;
 
     private Client client;
     private Restaurant restaurant;
     private double valorTotal;
+    private boolean delivery = false;
 
     public Order(Client client, Restaurant restaurant, double valorTotal) {
         if (client == null) {
@@ -22,6 +24,17 @@ public class Order {
         this.client = client;
         this.restaurant = restaurant;
         this.valorTotal = valorTotal;
+    }
+
+    @Override
+    public void carryDelivery() {
+        this.delivery = true;
+        System.out.println("--- delivery status ---");
+        System.out.println("Order #" + id + " successfully delivered to" + client.getName());
+    }
+
+    public boolean isDelivery() {
+        return delivery;
     }
 
     public long getId() {
